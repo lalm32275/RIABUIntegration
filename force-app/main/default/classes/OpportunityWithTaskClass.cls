@@ -2,7 +2,7 @@ public class OpportunityWithTaskClass {
 
     public static void opportunityTaskDue() {
         
-            // Query all tasks related to Opportunities with ActivityDate greater than today, ordered by ActivityDate descending
+            // Query all tasks related to Opportunities with ActivityDate greater than today, ordered by ActivityDate ascending
             List<Task> taskList = [SELECT Id, WhatId, Subject, ActivityDate FROM Task WHERE WhatId IN (SELECT Id FROM Opportunity) AND 
                                    ActivityDate > TODAY ORDER BY ActivityDate ASC];
 
